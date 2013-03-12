@@ -401,8 +401,21 @@
 -->
         </ul>
 
-        <p>The <dfn>application's origin</dfn> is the origin of the <a>application
-        manifest</a>. [[!ORIGIN]]</p>
+        <p>The <dfn>application's origin</dfn> (origin as defined in
+        [[!ORIGIN]]) is the origin of the <a>application manifest</a>,
+        which:</p>
+
+        <ul>
+          <li>MUST be located at the same origin as the application if the
+          application is a <a>hosted application</a>, or</li>
+
+          <li>MUST be located at the root of the application package if the
+          application is a <a>packaged application</a>.</li>
+        </ul>
+
+        <p>The application manifest URI of a <a>packaged
+        application</a> MUST follow the rules specified in <a>URI rules for a  
+        packaged file</a>.</p>
 
         </section>
       </section>
@@ -951,8 +964,8 @@
       <section>
         <h2>URI of a packaged file</h2>
 
-        <p>A file contained in a <a>packaged application</a> MUST have an URI
-        with the following rules:
+        <p>A file contained in a <a>packaged application</a> MUST have a URI
+        with the following <dfn>URI rules for a packaged file</dfn>:
         <ul>
           <li>The <code>scheme</code> of the URI MUST be <i>app</i>.</li>
           <li>The <code>authority</code> of the URI MUST be an identifier unique
